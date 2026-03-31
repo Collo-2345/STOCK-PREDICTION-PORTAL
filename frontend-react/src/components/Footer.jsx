@@ -1,6 +1,6 @@
 import React from 'react'
 
-function BFooter() {
+function Footer() {
   return (
    <>
        <footer className='footer py-3 my-3'>
@@ -13,4 +13,4 @@ function BFooter() {
   )
 }
 
-export default BFooter
+export default Footer

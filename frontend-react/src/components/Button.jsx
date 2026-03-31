@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Button(props) {
   return (
    
     <>
-     <a href="" className={`btn ${props.design}`}>{props.text}</a>
+     <Link href="" className={`btn ${props.design}`} to={props.url}>{props.text}</Link>
 
     
     </>

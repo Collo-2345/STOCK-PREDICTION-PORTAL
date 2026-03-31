@@ -1,7 +1,10 @@
 import './assets/css/style.css'
 import Header from './components/Header'
 import Main from './components/Main'
-import BFooter from './components/BFooter'
+import Footer from './components/Footer'
+import Register from './components/Register'
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Login from './components/Login'
 
 
 function App() {
@@ -9,10 +12,20 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Main />
-      <BFooter />
-  
+     
+      <BrowserRouter>
+       <Header />
+         <Routes>
+              <Route path='/' element = {<Main />}/>
+              <Route path='/register' element = {<Register />}/>
+              <Route path='/login' element = {<Login />}/>
+         </Routes>
+
+          <Footer />
+      </BrowserRouter>
+    
+     
+      
      
     </>
   )
