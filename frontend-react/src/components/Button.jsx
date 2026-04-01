@@ -5,7 +5,7 @@ function Button(props) {
   return (
    
     <>
-     <Link href="" className={`btn ${props.design}`} to={props.url}>{props.text}</Link>
+     <Link  className={`btn ${props.design}`} to={props.url}>{props.text}</Link>
 
     
     </>

@@ -12,8 +12,8 @@ function Login() {
   const [password, setPassword] = useState('')
   const [loading, setLoading]   = useState(false)
   const [error, setError]      = useState('')
-  const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext)
-  const navigate  = useNavigate()
+  const {setIsLoggedIn} = useContext(AuthContext)
+  const navigate  = useNavigate();
 
   const handleLogin = async (e) => {
     //prevent page from refresh
@@ -21,22 +21,21 @@ function Login() {
     setLoading(true)
 
     const userData = {username, password}
-    console.log('User data ==>', userData)
-
-
+  
     try{
       const response = await axios.post('http://127.0.0.1:8000/api/v1/token/', userData)
       // storing the access token and refresh token is web browser local storage
-      localStorage.setItem('accessToken', response.data.access)
-      localStorage.setItem('refreshToken', response.data.refresh)
+      localStorage.setItem('access_token', response.data.access)
+      localStorage.setItem('refresh_token', response.data.refresh)
+      localStorage.setItem('user', userData.username )
       console.log('Logged in successful!');
       setIsLoggedIn(true)
       navigate('/')
     }
     catch(error){
 
-      console.error('Invalid Credentials!')
-      setError('Invalid credentials!')
+      console.error('Invalid Credentials!',error)
+      setError('Invalid credentials!,Please try Again')
 
     }
     finally{

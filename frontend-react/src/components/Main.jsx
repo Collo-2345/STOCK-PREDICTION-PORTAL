@@ -14,7 +14,7 @@ function Main() {
                  placeat reiciendis non perferendis cumque facilis ab. Unde veritatis eius ullam 
                  natus!</p>
 
-                 <Button text='Explore More' design='btn-info'/>
+                 <Button text='Explore More' design='btn-info' url = '/dashboard' />
             
           </div>
        </div>

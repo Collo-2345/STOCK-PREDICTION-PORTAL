@@ -9,4 +9,7 @@ urlpatterns = [
     #Get this from jwt djangorestframeworks for login 
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
+    #path to protected view that require token to access
+    path('protected-view/',Userviews.ProtectedView.as_view())
 ]
